@@ -8,6 +8,7 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController numberController = TextEditingController();
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(15.0),
@@ -28,14 +29,14 @@ class LoginScreen extends StatelessWidget {
               height: 60.h,
             ),
             Container(
-              width: MediaQuery.of(context).size.width,
-              height: 62,
+              // width: MediaQuery.of(context).size.width,
+              // height: 62,
               decoration: BoxDecoration(
                 color: kBackGreen,
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   StatusButton(
                     textColor: kSelectedTextColor,
@@ -45,10 +46,61 @@ class LoginScreen extends StatelessWidget {
                   StatusButton(
                     textColor: kGreyTextColor,
                     text: 'Worker',
-                    color: kBackGreen,
+                    color: Colors.transparent,
                   ),
                 ],
               ),
+            ),
+            SizedBox(
+              height: 50.h,
+            ),
+            InputField(
+              hint: '671234567',
+              textController: numberController,
+              inputType: TextInputType.phone,
+              title: 'Phone Number',
+            ),
+            InputField(
+              hint: 'Password',
+              textController: numberController,
+              inputType: TextInputType.visiblePassword,
+              title: 'Password',
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 10.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  TextButton(
+                    onPressed: null,
+                    child: Text(
+                      'Forgot Password?',
+                      style: TextStyle(
+                        color: kPrimaryColor,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const LoginButton(),
+            SizedBox(
+              height: 60.h,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text("Don't have an account?"),
+                TextButton(
+                  onPressed: null,
+                  child: Text(
+                    'Sign up',
+                    style: TextStyle(
+                      color: kPrimaryColor,
+                    ),
+                  ),
+                ),
+              ],
             ),
           ],
         ),
@@ -56,3 +108,4 @@ class LoginScreen extends StatelessWidget {
     );
   }
 }
+
