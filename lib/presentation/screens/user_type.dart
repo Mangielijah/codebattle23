@@ -1,4 +1,5 @@
 import 'package:codebattle23/constants.dart';
+import 'package:codebattle23/presentation/components.dart';
 import 'package:codebattle23/presentation/screens/CitizenSignup.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -24,7 +25,7 @@ int Uservalue = 0;
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                BackButton(),
+                BackBtn(),
                 Center(
                   child: Container(
                     margin: const EdgeInsets.only(top: 20),
@@ -103,23 +104,43 @@ int Uservalue = 0;
                 ),
               ),
             ),
-            InkWell(
-              onTap: (){
-                (Uservalue != 0) ? 
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => CitizenSignup()))
-                : null;
-              },
-              child: Container(
-                width: 342.w,
-                height: 60.h,
-                child: Center(
-                  child: Text('Next'),
-                ),
-              ),
-            ),
+            MainActionBtn(
+              Uservalue: Uservalue,
+              action: (){
+              (Uservalue != 0) ? 
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => CitizenSignup()))
+              : null;
+              }),
           ],
         ),
       ),
     );
   }
 }
+
+// class MainActionBtn extends StatelessWidget {
+//   const MainActionBtn({
+//     super.key,
+//     required this.Uservalue,
+//   });
+
+//   final int Uservalue;
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return InkWell(
+//       onTap: (){
+//         (Uservalue != 0) ? 
+//         Navigator.of(context).push(MaterialPageRoute(builder: (context) => CitizenSignup()))
+//         : null;
+//       },
+//       child: Container(
+//         width: 342.w,
+//         height: 60.h,
+//         child: Center(
+//           child: Text('Next'),
+//         ),
+//       ),
+//     );
+//   }
+// }

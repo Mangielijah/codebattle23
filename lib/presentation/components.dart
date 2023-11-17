@@ -37,8 +37,8 @@ class StatusButton extends StatelessWidget {
 }
 
 
-class BackButton extends StatelessWidget {
-  const BackButton({
+class BackBtn extends StatelessWidget {
+  const BackBtn({
     super.key,
   });
 
@@ -125,4 +125,30 @@ class _InputFieldState extends State<InputField> {
       ],
     );
       }
+}
+
+
+class MainActionBtn extends StatelessWidget {
+  const MainActionBtn({
+    super.key,
+    required this.Uservalue,
+    required this.action,
+  });
+
+  final int Uservalue;
+  final Function action;
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: action(),
+      child: Container(
+        width: 342.w,
+        height: 60.h,
+        child: Center(
+          child: Text('Next'),
+        ),
+      ),
+    );
+  }
 }
