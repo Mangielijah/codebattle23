@@ -14,12 +14,9 @@ final serviceLocator = GetIt.instance;
 )
 Future<void> setupDependencies() async {
   await Supabase.initialize(
-      url: true //kReleaseMode
-          ? "https://zqufyslahltyqsgnhtbq.supabase.co"
-          : "https://limnobiesyxiygyrmwlx.supabase.co", //supabaseUrl,
-      anonKey: true //  kReleaseMode
-          ? "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpxdWZ5c2xhaGx0eXFzZ25odGJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTM3MjMyODQsImV4cCI6MjAwOTI5OTI4NH0.rCDJ4mDaog73vQUPorKmNMOIxD_Rnwu0e-VDrmnhlgc"
-          : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxpbW5vYmllc3l4aXlneXJtd2x4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTEwMjY1MTgsImV4cCI6MjAwNjYwMjUxOH0.wu09kbMrs4jroBW3UmVe0m83oKt4HvfrohWdEhA_5Ec", //supabaseAnonKey,
+      url: "https://fxkblshshhrvgazzwknw.supabase.co", //supabaseUrl,
+      anonKey:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ4a2Jsc2hzaGhydmdhenp3a253Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDAxNzYxNTgsImV4cCI6MjAxNTc1MjE1OH0.ry2vT507AQDTUrEbNwq6U2P9JMXN4CjwaMPAZLzigTg", //supabaseAnonKey,
       realtimeClientOptions: const RealtimeClientOptions());
 
   await Hive.initFlutter();

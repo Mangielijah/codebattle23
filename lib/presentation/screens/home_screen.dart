@@ -1,4 +1,4 @@
-import 'package:codebattle23/domain/entity/user_entity.dart';
+import 'package:codebattle23/domain/entities/user_entity.dart';
 import 'package:codebattle23/domain/repositories/repository.dart';
 import 'package:codebattle23/service_locator.dart';
 import 'package:flutter/material.dart';
@@ -9,16 +9,6 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    createUserFunction() {
-      UserEntity user = UserEntity(
-          name: "Mangi", number: "123151251", createdAt: DateTime.now());
-      serviceLocator<AppRepository>().createNewUser(user);
-    }
-
-    Future<List<UserEntity>> getAllUsers() async {
-      return await serviceLocator<AppRepository>().getAllUsers();
-    }
-
     return ResponsiveBuilder(
       builder: (context, sizingInfo) {
         if (sizingInfo.deviceScreenType == DeviceScreenType.desktop ||
@@ -37,9 +27,6 @@ class HomeScreen extends StatelessWidget {
             title: const Text('Mobile'),
           ),
           body: Container(),
-          floatingActionButton: FloatingActionButton(onPressed: () {
-            getAllUsers();
-          }),
         );
       },
     );
