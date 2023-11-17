@@ -54,12 +54,16 @@ class _HomeState extends State<Home> {
                 return Container(
                   width: 350.w,
                   height: 113.h,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20.r),
+                    color: kPrimaryColor,
+                  ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text('Location'),
-                      Text('Time')
+                      Text('Location', style: TextStyle(color: Colors.white),),
+                      Text('Time', style: TextStyle(color: Colors.white))
                     ],
                   ),
                 );
