@@ -110,7 +110,7 @@ int Uservalue = 0;
               (Uservalue != 0) ? 
               Navigator.of(context).push(MaterialPageRoute(builder: (context) => CitizenSignup()))
               : null;
-              }),
+              }, text: 'Next',),
           ],
         ),
       ),
