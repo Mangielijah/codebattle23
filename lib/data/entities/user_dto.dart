@@ -1,6 +1,7 @@
 import 'package:codebattle23/domain/entities/user_entity.dart';
 import 'package:codebattle23/domain/utils.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 part 'user_dto.freezed.dart';
 part 'user_dto.g.dart';
@@ -42,6 +43,16 @@ class UserDto with _$UserDto {
       phoneNumber: user.phoneNumber,
       userId: user.userId,
       userType: user.userType!.index,
+    );
+  }
+
+  static UserDto fromSupabaseUser(User user) {
+    return UserDto(
+      userId: user.id,
+      name: '',
+      idNumber: '',
+      phoneNumber: user.email!.split('@').first,
+      userType: 0,
     );
   }
 }

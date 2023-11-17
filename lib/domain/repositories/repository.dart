@@ -3,8 +3,8 @@ import 'package:codebattle23/domain/entities/user_entity.dart';
 import 'package:codebattle23/domain/entities/waste_report_entity.dart';
 
 abstract class AppRepository {
-  UserEntity? signIn(String email, String password);
-  Stream<UserEntity> authenticationStatus();
+  Future<UserEntity?> signIn(String email, String password);
+  Stream<UserEntity?> authenticationStatus();
   UserEntity? getInMemoryUser();
   Future<void> signOut();
   Future<void> requestPickup(PickupRequest request);
