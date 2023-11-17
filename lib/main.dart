@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
               colorScheme: ColorScheme.fromSeed(seedColor: kPrimaryColor)
                   .copyWith(background: Colors.white),
             ),
-            home: const LoginScreen(),
+            home: const Home(),
           );
         });
   }
