@@ -1,5 +1,6 @@
 import 'package:codebattle23/constants.dart';
 import 'package:codebattle23/presentation/screens/home_screen.dart';
+import 'package:codebattle23/presentation/screens/login_screen.dart';
 import 'package:codebattle23/service_locator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
               colorScheme: ColorScheme.fromSeed(seedColor: kPrimaryColor)
                   .copyWith(background: Colors.white),
             ),
-            home: const HomeScreen(),
+            home: const LoginScreen(),
           );
         });
   }
