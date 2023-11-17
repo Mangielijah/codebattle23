@@ -1,4 +1,4 @@
-import 'package:codebattle23/constants.dart';
+// import 'package:codebattle23/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -6,7 +6,8 @@ class StatusButton extends StatelessWidget {
   const StatusButton({
     super.key,
     required this.text,
-    required this.color, required this.textColor,
+    required this.color,
+    required this.textColor,
   });
 
   final String text;
@@ -20,8 +21,8 @@ class StatusButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
         color: color,
       ),
-      height: 60.h,
-      width: 300.h,
+      height: 90.h,
+      width: 900.w,
       child: Center(
         child: Text(
           text,
