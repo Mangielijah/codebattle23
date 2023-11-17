@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:codebattle23/data/entities/schedule_dto.dart';
 import 'package:codebattle23/data/entities/user_dto.dart';
 import 'package:codebattle23/data/repositories/in_memory_user.dart';
 import 'package:codebattle23/domain/entities/schedule_entity.dart';
@@ -18,11 +19,6 @@ class AppRepositoryImpl implements AppRepository {
   SupabaseQueryBuilder userCollection = Supabase.instance.client.from('users');
 
   InMemoryUser inMemoryUser;
-  @override
-  Future<void> createNewUser(UserEntity user) {
-    // TODO: implement createNewUser
-    throw UnimplementedError();
-  }
 
   @override
   Future<List<UserEntity>> getAllUsers() {
@@ -140,9 +136,28 @@ class AppRepositoryImpl implements AppRepository {
   }
 
   @override
-  Future<PickupSchedule> getPickupSchedule() {
-    // TODO: implement getPickupSchedule
-    throw UnimplementedError();
+  Future<List<PickupSchedule>?> getPickupSchedule() async {
+    try {
+      var query = Supabase.instance.client
+          .from('schedule')
+          .select()
+          .gt('created_at', DateTime.now());
+      List<PickupSchedule>? schList = await query.withConverter((data) {
+        if (data.isEmpty) {
+          return [];
+        }
+        List<PickupSchedule> newData = [];
+        for (Map<String, dynamic> sch in data) {
+          final schData = PickupScheduleDto.fromJson(sch);
+          newData.add(schData.toDomain());
+        }
+        return newData;
+      });
+      return schList;
+    } catch (error) {
+      debugPrint(error.toString());
+      return null;
+    }
   }
 
   @override

@@ -8,7 +8,7 @@ abstract class AppRepository {
   UserEntity? getInMemoryUser();
   Future<void> signOut();
   Future<void> requestPickup(PickupRequest request);
-  Future<PickupSchedule> getPickupSchedule();
+  Future<List<PickupSchedule>?> getPickupSchedule();
   Future<UserEntity> getAllWorkers();
   Future<void> reportWasteHazard(WasteReportEntity reportEntity);
   Future<WasteTipEntity> getWasteTips();
