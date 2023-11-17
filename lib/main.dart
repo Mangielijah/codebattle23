@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
             : const Size(430, 932),
         builder: (context, child) {
           return MaterialApp(
-            title: 'Code Battle 2023 - UltraTech',
+            title: 'Code Battle 2023 - UltraTech Team',
             theme: ThemeData(
               fontFamily: 'Poppins',
               primaryColor: kPrimaryColor,
