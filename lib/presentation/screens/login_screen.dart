@@ -15,8 +15,14 @@ class LoginScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              height: 50.h,
-              width: 100.w,
+              margin: const EdgeInsets.only(top: 20),
+              child: Image.asset(
+                'Logo.png',
+                height: 70.h,
+              ),
+            ),
+            SizedBox(
+              height: 15.h,
             ),
             const Text(
               'Welcome Back!',
@@ -25,17 +31,17 @@ class LoginScreen extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 60.h,
+              height: 90.h,
             ),
             Container(
-              width: MediaQuery.of(context).size.width,
-              height: 62,
+              // width: MediaQuery.of(context).size.width,
+              // height: 62,
               decoration: BoxDecoration(
                 color: kBackGreen,
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   StatusButton(
                     textColor: kSelectedTextColor,
@@ -45,10 +51,16 @@ class LoginScreen extends StatelessWidget {
                   StatusButton(
                     textColor: kGreyTextColor,
                     text: 'Worker',
-                    color: kBackGreen,
+                    color: Colors.transparent,
                   ),
                 ],
               ),
+            ),
+            Row(
+              children: [
+                Text("Don't have an account?"),
+                TextButton(onPressed: null, child: Text('Sign up'))
+              ],
             ),
           ],
         ),

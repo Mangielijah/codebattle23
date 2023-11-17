@@ -21,4 +21,4 @@ const double kBigHeader = 24.0;
 const double kSmallHeader = 16.0;
 const double kNormalText = 14.0;
 Color kSelectedTextColor = Colors.white;
-Color kGreyTextColor = Color(0x666666);
+Color kGreyTextColor = const Color(0x00666666).withOpacity(1);
