@@ -51,7 +51,18 @@ class _HomeState extends State<Home> {
             child: Padding(
               padding: EdgeInsets.symmetric(vertical: 10),
               child: ListView.builder(itemBuilder: (BuildContext context, int index){
-                return Container();
+                return Container(
+                  width: 350.w,
+                  height: 113.h,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text('Location'),
+                      Text('Time')
+                    ],
+                  ),
+                );
               })),), 
             )
           ],
